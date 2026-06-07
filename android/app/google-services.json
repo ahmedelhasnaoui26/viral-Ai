@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "394657923789",
+    "project_id": "ai-image-animate",
+    "storage_bucket": "ai-image-animate.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394657923789:android:3fa0bf82bf1da1e2295f84",
+        "android_client_info": {
+          "package_name": "com.viralai.cinemorph"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkL33A54K0jX4lwZhhcclVOaTrRXVeCvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

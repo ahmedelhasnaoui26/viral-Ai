@@ -1,0 +1,13 @@
+# Use when Railway Root Directory is empty (repo root).
+# In Railway → Settings → set Dockerfile path to: Dockerfile.video-processor
+# Or rename / symlink — see services/video-processor/README.md
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile.video-processor"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 5

@@ -1,0 +1,111 @@
+mutation CreateDemoData @transaction @auth(level: USER, insecureReason: "This is seed data and can be created by any logged-in user.") {
+  user_insertMany(data: [
+    {
+      id: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      displayName: "Demo User 1",
+      createdAt: "2024-01-01T10:00:00Z",
+      email: "demouser1@example.com",
+      photoUrl: "https://example.com/photo1.jpg",
+      bio: "This is a demo user account."
+    },
+    {
+      id: "b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22",
+      displayName: "Demo User 2",
+      createdAt: "2024-01-02T11:00:00Z",
+      email: "demouser2@example.com",
+      photoUrl: "https://example.com/photo2.jpg",
+      bio: "Another demo user for testing purposes."
+    }
+  ])
+  image_insertMany(data: [
+    {
+      id: "c0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33",
+      userId: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      imageUrl: "https://example.com/image1.jpg",
+      createdAt: "2024-01-03T12:00:00Z",
+      originalFilename: "image1.png",
+      description: "First demo image uploaded by Demo User 1."
+    },
+    {
+      id: "d0eebc99-9c0b-4ef8-bb6d-6bb9bd380a44",
+      userId: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      imageUrl: "https://example.com/image2.jpg",
+      createdAt: "2024-01-04T13:00:00Z",
+      originalFilename: "image2.jpeg",
+      description: "Second demo image by Demo User 1, a beautiful landscape."
+    },
+    {
+      id: "e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a55",
+      userId: "b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22",
+      imageUrl: "https://example.com/image3.jpg",
+      createdAt: "2024-01-05T14:00:00Z",
+      originalFilename: "image3.gif",
+      description: "Demo image by Demo User 2, a funny animal picture."
+    }
+  ])
+  animation_insertMany(data: [
+    {
+      id: "f0eebc99-9c0b-4ef8-bb6d-6bb9bd380a66",
+      userId: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      imageId: "c0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33",
+      animatedVideoUrl: "https://example.com/video1.mp4",
+      animationStyle: "Cartoon",
+      createdAt: "2024-01-06T15:00:00Z",
+      status: "completed",
+      parameters: "{\"style\":\"cartoon\",\"duration\":5}",
+      isPublic: true
+    },
+    {
+      id: "11eebc99-9c0b-4ef8-bb6d-6bb9bd380a77",
+      userId: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      imageId: "d0eebc99-9c0b-4ef8-bb6d-6bb9bd380a44",
+      animatedVideoUrl: "https://example.com/video2.mp4",
+      animationStyle: "Watercolor",
+      createdAt: "2024-01-07T16:00:00Z",
+      status: "processing",
+      parameters: "{\"style\":\"watercolor\",\"effects\":[\"fade\"]}",
+      isPublic: false
+    },
+    {
+      id: "22eebc99-9c0b-4ef8-bb6d-6bb9bd380a88",
+      userId: "b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22",
+      imageId: "e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a55",
+      animatedVideoUrl: "https://example.com/video3.mp4",
+      animationStyle: "Sketch",
+      createdAt: "2024-01-08T17:00:00Z",
+      status: "completed",
+      parameters: "{\"style\":\"sketch\",\"color\":\"sepia\"}",
+      isPublic: true
+    }
+  ])
+  comment_insertMany(data: [
+    {
+      id: "33eebc99-9c0b-4ef8-bb6d-6bb9bd380a99",
+      userId: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      animationId: "f0eebc99-9c0b-4ef8-bb6d-6bb9bd380a66",
+      content: "This animation is amazing!",
+      createdAt: "2024-01-09T18:00:00Z"
+    },
+    {
+      id: "44eebc99-9c0b-4ef8-bb6d-6bb9bd380b00",
+      userId: "b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22",
+      animationId: "f0eebc99-9c0b-4ef8-bb6d-6bb9bd380a66",
+      content: "I love the cartoon style!",
+      createdAt: "2024-01-10T19:00:00Z"
+    }
+  ])
+  like_insertMany(data: [
+    {
+      id: "55eebc99-9c0b-4ef8-bb6d-6bb9bd380b11",
+      userId: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+      animationId: "22eebc99-9c0b-4ef8-bb6d-6bb9bd380a88",
+      createdAt: "2024-01-11T20:00:00Z"
+    },
+    {
+      id: "66eebc99-9c0b-4ef8-bb6d-6bb9bd380b22",
+      userId: "b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22",
+      animationId: "f0eebc99-9c0b-4ef8-bb6d-6bb9bd380a66",
+      createdAt: "2024-01-12T21:00:00Z"
+    }
+  ])
+}

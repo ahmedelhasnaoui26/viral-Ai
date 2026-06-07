@@ -1,0 +1,7 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "sweet-cloud-34c9",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-01-01",
+  "observability": { "enabled": true }
+}

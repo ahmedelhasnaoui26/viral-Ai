@@ -1,0 +1,39 @@
+type User @table {
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+  bio: String
+}
+
+type Image @table {
+  user: User!
+  imageUrl: String!
+  createdAt: Timestamp!
+  originalFilename: String
+  description: String
+}
+
+type Animation @table {
+  user: User!
+  image: Image!
+  animatedVideoUrl: String!
+  animationStyle: String!
+  createdAt: Timestamp!
+  status: String!
+  parameters: String
+  isPublic: Boolean
+}
+
+type Comment @table {
+  user: User!
+  animation: Animation!
+  content: String!
+  createdAt: Timestamp!
+}
+
+type Like @table {
+  user: User!
+  animation: Animation!
+  createdAt: Timestamp!
+}
